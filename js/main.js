@@ -55,12 +55,11 @@ cat.forEach(element =>{
 $("#formCreacion").on("submit",event =>{
     event.preventDefault();
     var arrProdNuevo = document.getElementsByClassName("dato");
-    
     let producto = new Producto(arrProdNuevo.nombre.value,arrProdNuevo.precio.value,arrProdNuevo.link.value,arrProdNuevo.stock.value,arrProdNuevo.etiqueta.value,arrProdNuevo.descripcion.value,arrProdNuevo.categoria.value,arrProdNuevo.sucursal.value)
     
     categoria.crearProducto(producto)
     alert("Producto Creado")
-    window.close()
+    
 })
 
 //Eliminar Producto
@@ -68,7 +67,26 @@ $("#formCreacion").on("submit",event =>{
 $(document).on("click",'button[type="button"]',function(){
     if(this.classList.contains("btnEliminar")){
         let id = this.value
-        
+        categoria.eliminarProducto(id)
+        alert("Producto Eliminado")
+        location.reload()
+    }  
+})
+
+$(document).on("click",'button[type="button"]',function(){
+    if(this.classList.contains("btnEliminar")){
+        let id = this.value
+        categoria.eliminarProducto(id)
+        alert("Producto Eliminado")
+        location.reload()
+    }  
+})
+
+
+$(document).on("click",'button[type="button"]',function(){
+    if(this.classList.contains("btnEditar")){
+        let id = this.value
+        console.log(id)
     }  
 })
 

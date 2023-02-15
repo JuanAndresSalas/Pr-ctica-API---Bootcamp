@@ -15,12 +15,20 @@ export class Categoria{
     }
 
     crearProducto(producto){
-        console.log(producto)
         fetch("https://bsite.net/metalflap/td-producto",
             {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body:   JSON.stringify(producto)
+            }
+        )
+    }
+
+    eliminarProducto(id){
+        fetch(`https://bsite.net/metalflap/td-producto/${id}`,
+            {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' }
             }
         )
     }

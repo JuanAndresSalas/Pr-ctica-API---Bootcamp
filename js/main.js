@@ -24,8 +24,8 @@ function listarProductos(inventario){
                                 <td>${producto.stock}</td> 
                                 <td><img src="${producto.link}" alt="Imagen No Disponible"  style="height: 100px; max-width: 100px"></td>
                                 <td>${producto.etiqueta}</td>
-                                <td><button type="button" class="btnEditar btn btn-success">Editar</button></td> 
-                                <td><button type="button" class="btnEliminar btn btn-danger">Eliminar</button></td> 
+                                <td><button type="button" class="btnEditar btn btn-success" value="${producto.id}">Editar</button></td> 
+                                <td><button type="button" class="btnEliminar btn btn-danger" value="${producto.id}">Eliminar</button></td> 
                             </th>  `
         $("#cuerpoTabla").append(fila)  
            
@@ -35,7 +35,6 @@ function listarProductos(inventario){
 
 listarProductos(inventario)
 
-
 //Crear Producto
 
 $("#crearProducto").on("click",function(){
@@ -43,7 +42,15 @@ $("#crearProducto").on("click",function(){
 })
 
 
-console.log(categoria)
+cat.forEach(element =>{
+    if(element.id == 9 || element.id == 4 || element.id == 3 || element.id == 2){
+        let option = document.createElement("option");
+        option.value = element.id;
+        option.innerHTML = element.nombre;
+        $("#categoria").append(option)
+    }
+    
+})
 
 $("#formCreacion").on("submit",event =>{
     event.preventDefault();
@@ -56,6 +63,14 @@ $("#formCreacion").on("submit",event =>{
     window.close()
 })
 
+//Eliminar Producto
+
+$(document).on("click",'button[type="button"]',function(){
+    if(this.classList.contains("btnEliminar")){
+        let id = this.value
+        
+    }  
+})
 
 
 

@@ -14,7 +14,16 @@ export class Categoria{
         .then(data => data)
     }
 
-          
+    crearProducto(producto){
+        console.log(producto)
+        fetch("https://bsite.net/metalflap/td-producto",
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:   JSON.stringify(producto)
+            }
+        )
+    }
 
 
 }

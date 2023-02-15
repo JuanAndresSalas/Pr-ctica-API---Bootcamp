@@ -4,12 +4,12 @@ import {Producto} from "../js/Producto.js"
 var categoria = new Categoria;
 
 var inventario = await categoria.traerProductos();
-var categoria = await categoria.obtenerCategoria();
+var cat = await categoria.obtenerCategoria();
 
 function listarProductos(inventario){
     inventario.forEach(producto => {
         let categoriaProducto;
-        categoria.forEach(element => {
+        cat.forEach(element => {
             if(producto.idCategoria == element.id){
                 categoriaProducto = element.nombre
             }
@@ -43,15 +43,7 @@ $("#crearProducto").on("click",function(){
 })
 
 
-function crearProducto(producto){
-    fetch("https://bsite.net/metalflap/td-producto",
-        {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body:   JSON.stringify(producto)
-        }
-    )
-}
+console.log(categoria)
 
 $("#formCreacion").on("submit",event =>{
     event.preventDefault();
@@ -59,7 +51,9 @@ $("#formCreacion").on("submit",event =>{
     
     let producto = new Producto(arrProdNuevo.nombre.value,arrProdNuevo.precio.value,arrProdNuevo.link.value,arrProdNuevo.stock.value,arrProdNuevo.etiqueta.value,arrProdNuevo.descripcion.value,arrProdNuevo.categoria.value,arrProdNuevo.sucursal.value)
     
-    crearProducto(producto)
+    categoria.crearProducto(producto)
+    alert("Producto Creado")
+    window.close()
 })
 
 

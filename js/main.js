@@ -6,6 +6,8 @@ var categoria = new Categoria;
 var inventario = await categoria.traerProductos();
 var cat = await categoria.obtenerCategoria();
 
+
+
 function listarProductos(inventario){
     inventario.forEach(producto => {
         let categoriaProducto;
@@ -37,11 +39,6 @@ listarProductos(inventario)
 
 //Crear Producto
 
-$("#crearProducto").on("click",function(){
-    window.open("/html/creacion.html")    
-})
-
-
 cat.forEach(element =>{
     if(element.id == 9 || element.id == 4 || element.id == 3 || element.id == 2){
         let option = document.createElement("option");
@@ -56,10 +53,8 @@ $("#formCreacion").on("submit",event =>{
     event.preventDefault();
     var arrProdNuevo = document.getElementsByClassName("dato");
     let producto = new Producto(arrProdNuevo.nombre.value,arrProdNuevo.precio.value,arrProdNuevo.link.value,arrProdNuevo.stock.value,arrProdNuevo.etiqueta.value,arrProdNuevo.descripcion.value,arrProdNuevo.categoria.value,arrProdNuevo.sucursal.value)
-    
     categoria.crearProducto(producto)
-    alert("Producto Creado")
-    
+    location.reload()
 })
 
 //Eliminar Producto
@@ -68,26 +63,20 @@ $(document).on("click",'button[type="button"]',function(){
     if(this.classList.contains("btnEliminar")){
         let id = this.value
         categoria.eliminarProducto(id)
-        alert("Producto Eliminado")
-        location.reload()
-    }  
-})
-
-$(document).on("click",'button[type="button"]',function(){
-    if(this.classList.contains("btnEliminar")){
-        let id = this.value
-        categoria.eliminarProducto(id)
-        alert("Producto Eliminado")
         location.reload()
     }  
 })
 
 
+//Editar Producto
 $(document).on("click",'button[type="button"]',function(){
     if(this.classList.contains("btnEditar")){
-        let id = this.value
-        console.log(id)
-    }  
+        let idEdicion = this.value
+        localStorage.setItem("id",JSON.stringify(idEdicion))
+        window.open("/html/edicion.html")
+        
+    } 
+    
 })
 
 

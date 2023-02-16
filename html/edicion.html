@@ -8,45 +8,45 @@
     <title>Crear nuevo Producto</title>
 </head>
 <body>
-    <form id="formCreacion">
+    <form id="formEdicion">
         <div class="mb-3">
-          <label for="nombre" class="form-label ">Nombre</label>
-          <input type="text" class="form-control dato" id="nombre">
+          <label for="nombreEdit" class="form-label ">Nombre</label>
+          <input type="text" class="form-control datoEdit" id="nombreEdit">
         </div>
         <div class="mb-3">
-            <label for="precio" class="form-label">Precio</label>
-            <input type="number" min="0"  class="form-control dato" id="precio">
+            <label for="precioEdit" class="form-label">Precio</label>
+            <input type="number" min="0"  class="form-control datoEdit" id="precioEdit">
         </div>
         <div class="mb-3">
-            <label for="link" class="form-label">Link Imagen</label>
-            <input type="text" class="form-control dato" id="link">
+            <label for="linkEdit" class="form-label">Link Imagen</label>
+            <input type="text" class="form-control datoEdit" id="linkEdit">
         </div>
         <div class="mb-3">
-            <label for="stock" class="form-label">Stock</label>
-            <input type="numer" min="0" class="form-control dato" id="stock">
+            <label for="stockEdit" class="form-label">Stock</label>
+            <input type="numer" min="0" class="form-control datoEdit" id="stockEdit">
         </div>
         <div class="mb-3">
-            <label for="etiqueta" class="form-label">Etiqueta</label>
-            <input type="text" class="form-control dato" id="etiqueta">
+            <label for="etiquetaEdit" class="form-label">Etiqueta</label>
+            <input type="text" class="form-control datoEdit" id="etiquetaEdit">
         </div>
-        <label for="descripcion" class="form-label">Descripcion</label>
+        <label for="descripcionEdit" class="form-label">Descripcion</label>
         <div class="mb-3">
-            <textarea class="form-control dato" name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+            <textarea class="form-control datoEdit" name="descripcionEdit" id="descripcionEdit" cols="30" rows="5"></textarea>
         </div>
         <div class="mb-3">
-            <label for="categoria" class="form-label">Categoría</label>
-            <select class="form-select dato" id="categoria">
-                <option  value="4" selected>-</option>
+            <label for="categoriaEdit" class="form-label">Categoría</label>
+            <select class="form-select datoEdit" id="categoriaEdit">
+                <option id="categoriaSelected" selected></option>
             </select>
         </div>
         <div class="mb-3">
-            <label for="sucursal" class="form-label">ID Sucursal</label>
-            <input type="numer" min="0" class="form-control dato" id="sucursal" value="2" disabled>
+            <label for="sucursalEdit" class="form-label">ID Sucursal</label>
+            <input type="numer" min="0" class="form-control datoEdit" id="sucursalEdit" value="2" disabled>
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-primary">Editar</button>
       </form>
 </body>
 <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-<script type="module" src="/js/main.js"></script>
+<script type="module" src="/js/edicion.js"></script>
 </html>

@@ -9,6 +9,7 @@ export class Producto{
     idCategoria;
     idSucursal;
 
+    //Constructor Creación Producto
     constructor(nombre,precio,link,stock,etiqueta,descripcion,idCategoria,idSucursal){
         this.nombre = nombre;
         this.precio = precio;
@@ -20,6 +21,9 @@ export class Producto{
         this.idSucursal = idSucursal
     };
 
+   
+    
+    get id(){return this.id};
     get nombre(){return this.nombre};
     get precio(){return this.precio};
     get link(){return this.link};
@@ -29,14 +33,15 @@ export class Producto{
     get idCategoria(){return this.categoria};
     get idSucursal(){return this.sucursal};
 
+    setID(id){this.id =id}
     setNombre(nombre){this.nombre = nombre}
-    setNombre(precio){this.precio = precio}
-    setNombre(link){this.link = link}
-    setNombre(stock){this.stock = stock}
-    setNombre(etiqueta){this.etiqueta = etiqueta}
-    setNombre(descipcion){this.descipcion = descipcion}
-    setNombre(idCategoria){this.idCategoria = idCategoria}
-    setNombre(idSucursal){this.idSucursal = idSucursal}
+    setPrecio(precio){this.precio = precio}
+    setLink(link){this.link = link}
+    setStock(stock){this.stock = stock}
+    setEtiqueta(etiqueta){this.etiqueta = etiqueta}
+    setDescripcion(descripcion){this.descipcion = descripcion}
+    setIDCategoria(idCategoria){this.idCategoria = idCategoria}
+    setIDSucursal(idSucursal){this.idSucursal = idSucursal}
 
     
 }

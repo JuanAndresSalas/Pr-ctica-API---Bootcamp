@@ -24,7 +24,7 @@ function listarProductos(inventario){
                                 <td>${producto.precio}</td>
                                 <td>${categoriaProducto}</td>
                                 <td>${producto.stock}</td> 
-                                <td><img src="${producto.link}" alt="Imagen No Disponible"  style="height: 100px; max-width: 100px"></td>
+                                <td><img src="${producto.link}" alt="Imagen No Disponible"  style="max-height: 50px; max-width: 50px"></td>
                                 <td>${producto.etiqueta}</td>
                                 <td><button type="button" class="btnEditar btn btn-success" value="${producto.id}">Editar</button></td> 
                                 <td><button type="button" class="btnEliminar btn btn-danger" value="${producto.id}">Eliminar</button></td> 

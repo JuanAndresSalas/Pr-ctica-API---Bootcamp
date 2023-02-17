@@ -37,7 +37,6 @@ $("#formEdicion").on("submit",event =>{
     console.log(arrProdEdit)
     let prod = new Producto(arrProdEdit.nombreEdit.value,parseInt(arrProdEdit.precioEdit.value),arrProdEdit.linkEdit.value,parseInt(arrProdEdit.stockEdit.value),arrProdEdit.etiquetaEdit.value,arrProdEdit.descripcionEdit.value,parseInt(arrProdEdit.categoriaEdit.value),parseInt(arrProdEdit.sucursalEdit.value))
     prod.setID(parseInt(id))
-    console.log(JSON.stringify(prod))
     catEdit.editarProducto(prod)
     window.close()
 })

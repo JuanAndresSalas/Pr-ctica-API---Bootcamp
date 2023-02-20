@@ -7,48 +7,92 @@
     <title>Document</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
+
 <body>
-<h3 class="m-3">Ingresar producto</h3>
-    <form class="formCreatePdto">
+  <!-- FORMULARIO CREAR PRODUCTO -->
+
+    <form id="formCreatePdto">
+      <h3 class="m-3">Ingresar producto</h3>
         <div class="m-3">
-          <label class="form-label">Nombre producto</label>
+          <label  for="nombre">Nombre producto</label>
           <input type="text" class="dato form-control" id="nombre">
         </div>
+        <div class="m-3">
+          <label  for="precio">Precio producto</label>
+          <input type="text" class="dato form-control"  id="precio">
+        </div>
+        <div class="m-3">
+          <label  for="link">Imagen producto</label>
+          <input type="text" class="dato form-control"  id="link">
+        </div>
+        <div class="m-3">
+          <label  for="stock">Stock producto</label>
+          <input type="text" class="dato form-control"  id="stock">
+        </div>
+        <div class="m-3">
+          <label  for="etiqueta">Etiqueta producto</label>
+          <input type="text" class="dato form-control"  id="etiqueta">
+        </div>
         <div class="m-3" >
-            <label class="form-label">Descripción producto</label>
-            <input type="text" class="dato form-control" id="descripcion">
+            <label  for="descripcion">Descripción producto</label>
+            <input type="text" class="dato form-control"  id="descripcion">
           </div>
           <div class="m-3">
-            <label class="form-label">Precio producto</label>
-            <input type="text" class="dato form-control" id="precio">
-          </div>
-          <div class="m-3">
-            <label class="form-label">Stock producto</label>
-            <input type="text" class="dato form-control" id="stock">
-          </div>
-          <div class="m-3">
-            <label class="form-label">Imagen producto</label>
-            <input type="text" class="dato form-control" id="link">
-          </div>
-          <div class="m-3">
-            <label class="form-label">Etiqueta producto</label>
-            <input type="text" class="dato form-control" id="etiqueta">
-          </div>
-          <div class="m-3">
-            <label class="form-label">Categoría producto</label>
-            <select name="" id="categoria"><option  value="4" selected>-</option>
+            <label  for="categoria">Categoría producto</label>
+            <select class="dato" id="categoria"><option  value="4">-</option>
             </select>
           </div>
           <div class="m-3">
-            <label class="form-label">Sucursal</label>
-            <input type="text" class="dato form-control" id="sucursal">
+            <label  for="sucursal">Sucursal</label>
+            <input type="text" class="dato form-control"  value="2" id="sucursal" disabled>
           </div>
-        <button type="submit" class="btn btn-primary m-3">Submit</button>
+        <button type="submit" class="btn btn-primary m-3" id="submit">Submit</button>
+      </form>
+
+<!-- FORMULARIO EDITAR PRODUCTO -->
+
+
+    <form id="formEditPdto" hidden>
+      <h3 class="m-3">Editar producto</h3>
+        <div class="m-3">
+          <label  for="nombreEdit">Nombre producto</label>
+          <input type="text" class="datoEdit form-control" id="nombreEdit">
+        </div>
+        <div class="m-3">
+          <label  for="precioEdit">Precio producto</label>
+          <input type="text" class="datoEdit form-control"  id="precioEdit">
+        </div>
+        <div class="m-3">
+          <label  for="linkEdit">Imagen producto</label>
+          <input type="text" class="datoEdit form-control"  id="linkEdit">
+        </div>
+        <div class="m-3">
+          <label  for="stockEdit">Stock producto</label>
+          <input type="text" class="datoEdit form-control"  id="stockEdit">
+        </div>
+        <div class="m-3">
+          <label  for="etiquetaEdit">Etiqueta producto</label>
+          <input type="text" class="datoEdit form-control"  id="etiquetaEdit">
+        </div>
+        <div class="m-3" >
+            <label  for="descripcionEdit">Descripción producto</label>
+            <input type="text" class="datoEdit form-control"  id="descripcionEdit">
+          </div>
+          <div class="m-3">
+            <label  for="categoriaEdit">Categoría producto</label>
+            <select class="datoEdit" id="categoriaEdit"><option  value="4">-</option>
+            </select>
+          </div>
+          <div class="m-3">
+            <label  for="sucursalEdit">Sucursal</label>
+            <input type="text" class="dato Edit form-control"  value="2" id="sucursalEdit" disabled>
+          </div>
+        <button type="button" class="btn btn-primary m-3" id="submitEdit">Editar</button>
       </form>
 
 
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="/main.js"></script>
 </body>
 </html>

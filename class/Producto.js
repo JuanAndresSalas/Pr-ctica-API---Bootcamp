@@ -39,25 +39,4 @@ export class Producto{
         setIdCategoria(idCategoria){this.idCategoria = idCategoria};
         setIdSucursal(idSucursal){this.idSucursal = idSucursal};
         
-   
-
-
-    obtenerProductos(){
-        return fetch("https://bsite.net/metalflap/td-producto")
-        .then(response => response.json())
-        .then(data => data.filter(productos => productos.idSucursal == 2))
-}
-    crearProducto(producto){
-        fetch("https://bsite.net/metalflap/td-producto",
-        {
-            method: "POST",
-            headers: {"content-type": "aplication/json"},
-            body: JSON.stringify(producto)
-        }
-        )
-}
-
-    eliminarProducto(){
-        fetch("https://bsite.net/metalflap/td-producto/$  {id}")
-    }
 }
